@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex gap-3 align-items-center">
+            <h1>Hot Questions</h1>
+            <a href="{% url 'index' %}">New Questions </a>
+        </div>
+
+            <div class="d-flex flex-column col-8 gap-3">
+                <div class="d-flex flex-column gap-3">
+                    {% for question in questions %}
+                {% include 'list_of_question.html' %}
+                    {% endfor %}
+            </div>
+{% include 'pagination.html' %}
+            </div>
+{% endblock %}
